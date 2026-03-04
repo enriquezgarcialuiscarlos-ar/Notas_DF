@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Laboratorio Renderizado</title>
+</head>
+<body>
+
+<h2>Medición del Renderizado</h2>
+
+<button onclick="agregarUnoPorUno()">Agregar 5000 divs (uno por uno)</button>
+<button onclick="agregarEnBloque()">Agregar 5000 divs (innerHTML)</button>
+<button onclick="agregarConFragment()">Agregar 5000 divs (DocumentFragment)</button>
+
+<hr>
+<div id="contenedor"></div>
+
+<script>
+
+function limpiar() {
+    document.getElementById("contenedor").innerHTML = "";
+}
+
+function agregarUnoPorUno() {
+    limpiar();
+    console.time("unoPorUno");
+    const contenedor = document.getElementById("contenedor");
+
+    for (let i = 0; i < 5000; i++) {
+        const nuevo = document.createElement("div");
+        nuevo.textContent = "Elemento " + i;
+        contenedor.appendChild(nuevo);
+    }
+
+    console.timeEnd("unoPorUno");
+}
+
+function agregarEnBloque() {
+    limpiar();
+    console.time("enBloque");
+    const contenedor = document.getElementById("contenedor");
+
+    let html = "";
+    for (let i = 0; i < 5000; i++) {
+        html += "<div>Elemento " + i + "</div>";
+    }
+
+    contenedor.innerHTML = html;
+
+    console.timeEnd("enBloque");
+}
+
+function agregarConFragment() {
+    limpiar();
+    console.time("fragment");
+    const contenedor = document.getElementById("contenedor");
+    const fragment = document.createDocumentFragment();
+
+    for (let i = 0; i < 5000; i++) {
+        const nuevo = document.createElement("div");
+        nuevo.textContent = "Elemento " + i;
+        fragment.appendChild(nuevo);
+    }
+
+    contenedor.appendChild(fragment);
+
+    console.timeEnd("fragment");
+}
+
+</script>
+
+</body>
+</html>
