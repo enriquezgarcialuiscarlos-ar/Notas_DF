@@ -12,7 +12,7 @@
         /* --- 1. TRANSICIONES (Efecto cuando algo cambia de estado) --- */
         .transicion {
             /* propiedad | duración | curva de tiempo | retraso */
-            transition: all 0.4s ease-in-out; 
+           transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
         }
 
         .transicion:hover {
@@ -31,18 +31,6 @@
             100% { transform: translateY(0); background-color: #3498db; }
         }
 
-        @keyframes latido {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.2);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
         .animacion-infinita {
             /* nombre | duración | velocidad | repetición */
             animation: miAnimacion 2s infinite ease-in-out;
@@ -57,14 +45,14 @@
 
         .pulso {
             background-color: #e74c3c;
-            /* animation: pulso 1.5s infinite; */
-            animation: latido 1.5s infinite;
+            animation: pulso 1.5s infinite;
+            animation: latido 1.0s infinite;
         }
 
         /* --- 4. EFECTO DE CARGA (Loading) --- */
         @keyframes girar {
             from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            to { transform: rotate(-360deg); }
         }
 
         .spinner {
@@ -72,5 +60,10 @@
             border: 5px solid #ccc;
             border-top: 5px solid #34495e;
             border-radius: 50%;
-            animation: girar 1s linear infinite; /* 'linear' para que el giro sea constante */
+            animation: girar 5s  infinite; /* 'linear' para que el giro sea constate */
+        }
+        @keyframes latido {
+          0% { transform: scale(1);   opacity :1; }
+          50% { transform: scale(1.2);  opacity: 0.5; }
+          100% { transform: scale(1);  opacity :1; }
         }
