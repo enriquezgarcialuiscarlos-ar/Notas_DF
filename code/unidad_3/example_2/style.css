@@ -24,7 +24,11 @@
         /* --- 1. TRANSICIONES (Efecto cuando algo cambia de estado) --- */
         .transicion {
             /* propiedad | duración | curva de tiempo | retraso */
+<<<<<<< Updated upstream
             transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+=======
+           transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+>>>>>>> Stashed changes
         }
 
         .transicion:hover {
@@ -117,6 +121,7 @@
 
         /* --- 4. EFECTO DE CARGA (Loading) --- */
         @keyframes girar {
+<<<<<<< Updated upstream
             from {
                 transform: rotate(0deg);
             }
@@ -124,6 +129,10 @@
             to {
                 transform: rotate(-360deg);
             }
+=======
+            from { transform: rotate(0deg); }
+            to { transform: rotate(-360deg); }
+>>>>>>> Stashed changes
         }
 
         .spinner {
@@ -132,6 +141,7 @@
             border: 5px solid #ccc;
             border-top: 5px solid #34495e;
             border-radius: 50%;
+<<<<<<< Updated upstream
             <<<<<<< HEAD animation: girar 5s infinite;
             /* 'linear' para que el giro sea constate */
         }
@@ -158,3 +168,12 @@
         }
 
         >>>>>>>24fcb5e16970a3334e89895a7196c4a52d18143c
+=======
+            animation: girar 5s  infinite; /* 'linear' para que el giro sea constate */
+        }
+        @keyframes latido {
+          0% { transform: scale(1);  transform: opacity(1); }
+          50% { transform: scale(1.2); transform: opacity(0.5); }
+          100% { transform: scale(1); transform: opacity(1); }
+        }
+>>>>>>> Stashed changes

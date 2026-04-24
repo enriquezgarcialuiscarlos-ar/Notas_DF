@@ -1,12 +1,17 @@
 const cube = document.getElementById("cube");
 
+<<<<<<< Updated upstream
 let scale = 1; // 100%
 
 let rotateX = 0;
 let rotateY = 0;
+=======
+let scale=1;
+>>>>>>> Stashed changes
 
 document.addEventListener("keydown", (e) => {
 
+<<<<<<< Updated upstream
 	switch (e.key) {
     	case "ArrowUp":
       		rotateX -= 90;
@@ -43,4 +48,8 @@ document.addEventListener("keydown", (e) => {
   scale3d(${scale}, ${scale}, ${scale})
 `;
 
+=======
+
+  cube.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(${scale})`;
+>>>>>>> Stashed changes
 });

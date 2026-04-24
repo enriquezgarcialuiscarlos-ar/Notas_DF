@@ -20,6 +20,13 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowDown") rotateX += step;
   if (e.key === "ArrowLeft") rotateY -= step;
   if (e.key === "ArrowRight") rotateY += step;
+
+  if (e.key === "a" || e.key === "A") scale += 0.1;
+  if (e.key === "d" || e.key === "D") scale -= 0.1;
+
+  
+  if (scale < 0.3) scale = 0.3;
+  if (scale > 3) scale = 3;
 });
 
 // 🖱️ MOUSE
@@ -90,3 +97,4 @@ function animate() {
 }
 
 animate();
+
